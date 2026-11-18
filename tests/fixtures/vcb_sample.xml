@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- DỮ LIỆU MẪU MINH HỌA (số giả lập), chỉ dùng để thử offline, KHÔNG phải tỷ giá thật -->
+<ExrateList>
+  <DateTime>1/15/2026 9:00:00 AM</DateTime>
+  <Exrate CurrencyCode="USD" CurrencyName="US DOLLAR" Buy="25,000.00" Transfer="25,030.00" Sell="25,390.00" />
+  <Exrate CurrencyCode="EUR" CurrencyName="EURO" Buy="28,000.00" Transfer="28,300.00" Sell="29,500.00" />
+  <Exrate CurrencyCode="JPY" CurrencyName="JAPANESE YEN" Buy="155.00" Transfer="157.00" Sell="165.00" />
+  <Exrate CurrencyCode="GBP" CurrencyName="BRITISH POUND" Buy="32,000.00" Transfer="32,350.00" Sell="33,500.00" />
+  <Exrate CurrencyCode="AUD" CurrencyName="AUSTRALIAN DOLLAR" Buy="16,000.00" Transfer="16,160.00" Sell="16,700.00" />
+  <Exrate CurrencyCode="THB" CurrencyName="THAI BAHT" Buy="-" Transfer="700.00" Sell="760.00" />
+  <Exrate CurrencyCode="KRW" CurrencyName="SOUTH KOREAN WON" Buy="-" Transfer="-" Sell="-" />
+  <Exrate CurrencyCode="XXX" CurrencyName="BROKEN ROW" Buy="1" Transfer="abc" Sell="5" />
+</ExrateList>

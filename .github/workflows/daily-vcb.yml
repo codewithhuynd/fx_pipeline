@@ -1,0 +1,41 @@
+name: Daily VCB
+
+on:
+  schedule:
+    - cron: "0 2 * * *"        # 02:00 UTC = 09:00 giờ Việt Nam
+  workflow_dispatch:            # cho phép bấm chạy tay trên GitHub
+
+permissions:
+  contents: write               # cho phép workflow commit dữ liệu
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Ho_Chi_Minh      # fetched_at ghi theo giờ VN
+    steps:
+      - name: Lấy code
+        uses: actions/checkout@v4
+
+      - name: Cài Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Cài thư viện
+        run: pip install requests==2.34.2 pandas==3.1.0 numpy==2.4.6
+
+      - name: Thu thập VCB
+        run: python main.py --vcb-only
+
+      - name: Commit dữ liệu mới
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "Không có dữ liệu mới"
+            exit 0
+          fi
+          git commit -m "data: VCB $(date +%F)"
+          git push

@@ -43,7 +43,7 @@ pipeline.py          điều phối toàn bộ pipeline
 main.py / app.py     CLI / Streamlit
 tests/               unit test + dữ liệu mẫu
 ```
-Khi chuyển bản ghi sang DataFrame, `date` và `fetched_at` được parse thành kiểu ngày/giờ; file CSV/JSON vẫn lưu ngày dạng ISO để dễ đọc và trao đổi.
+
 
 ## Đối chiếu yêu cầu
 | Yêu cầu | Vị trí |
@@ -63,5 +63,3 @@ Khi chuyển bản ghi sang DataFrame, `date` và `fetched_at` được parse th
 - Dữ liệu VCB chỉ có lịch sử từ ngày bắt đầu chạy chương trình.
 - ECB là tỷ giá tham chiếu theo ngày làm việc, không phải giá giao dịch.
 
-## Thành viên
-(điền tên, MSSV, phân công)
